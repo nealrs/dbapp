@@ -4,7 +4,7 @@
     "head": {
       "title": "Das Brunch",
       "description": "The latest posts",
-      "icon": "https://nealshyam.com/dasbrunch/db.png",
+      "icon": "https://raw.githubusercontent.com/nealrs/dbapp/master/db.png",
       "actions": {
         "$pull": {
           "trigger": "fetch"
@@ -21,7 +21,7 @@
         "fetch": {
           "type": "$network.request",
           "options": {
-            "url": "https://nealshyam.com/dasbrunch/current.json"
+            "url": "https://raw.githubusercontent.com/nealrs/dbapp/master/json/current.json"
           },
           "success": {
             "type": "$render"
@@ -61,11 +61,11 @@
               "items": [
                 {
                   "text": "New",
-                  "url": "https://nealshyam.com/dasbrunch/current.json"
+                  "url": "https://raw.githubusercontent.com/nealrs/dbapp/master/json/current.json"
                 },
                 {
                   "text": "Previous issues",
-                  "url": "https://nealshyam.com/dasbrunch/archive.json"
+                  "url": "https://raw.githubusercontent.com/nealrs/dbapp/master/json/archive.json"
                 }
               ]
             }
