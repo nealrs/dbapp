@@ -1,47 +1,41 @@
 {
   "$jason": {
     "head": {
-      "data": {
-        "posts": [
-        	{
-        		"id":"0",
-        		"title": "A binary coder for Swift",
-        		"publisher": "Mike Ash",
-        		"url": "https://www.mikeash.com/pyblog/friday-qa-2017-07-28-a-binary-coder-for-swift.html",
-        		"img": "http://lorempixel.com/output/abstract-q-c-640-480-10.jpg"
-        	},
-        	{
-        		"id":"1",
-        		"title": "Visualizing the Math Behind Logistic Regression and Newton's Method",
-        		"publisher": "Laziest Programmer",
-        		"url": "http://thelaziestprogrammer.com/sharrington/math-of-machine-learning/solving-logreg-newtons-method",
-        		"img": "http://lorempixel.com/output/abstract-q-c-640-480-3.jpg"
-        	},
-        	{
-        		"id":"2",
-        		"title": "How to present a GitHub project for your resume (2016)",
-        		"publisher": "The HFT Guy",
-        		"url": "https://thehftguy.com/2016/10/24/heres-how-to-make-a-good-github-project-for-your-resume/",
-        		"img": "http://lorempixel.com/output/abstract-q-c-640-480-5.jpg"
-        	}
-        ]
-      },
       "title": "Das Brunch",
       "description": "Das Brunch reading list app",
-      "icon": "https://raw.githubusercontent.com/nealrs/dbapp/master/db.png",
+      "icon": "http://nealshyam.com.s3.amazonaws.com/dasbrunch/db.png",
+      "styles": {
+        "bold": {
+          "font": "HelveticaNeue-CondensedBold",
+          "size": "15"
+        },
+        "padded": {
+          "padding": "20"
+        },
+        "spaced":{
+          "spacing": "30"
+        },
+        "normal": {
+          "font": "HelveticaNeue",
+          "size": "12"
+        }
+      },
       "actions": {
         "$pull": {
           "type": "$reload"
         },
-        "$foreground": {
-          "type": "$reload"
-        },
-        "$show": {
-          "type": "$reload"
+        "$load": {
+          "type": "$network.request",
+          "options": {
+            "url": "http://nealshyam.com.s3.amazonaws.com/dasbrunch/stories.json"
+          },
+          "success": {
+            "type": "$render"
+          }
         }
       },
-      "templates": {
-        "body": {
+      "templates":{
+        "body":{
           "header": {
             "title": "Das Brunch",
             "style": {
@@ -49,72 +43,75 @@
               "color": "#ffffff",
               "font": "AvenirNext-Bold",
               "size": "14"
-            }
-          },
-          "footer": {
-            "tabs": {
-              "style": {
-                "background": "#D03C0F",
-                "color": "#ffffff"
-              },
-              "items": [
-                {
-                  "text": "Latest stories",
-                  "url": "file://main.json"
-                },
-                {
-                  "text": "Past issues",
-                  "url": "file://archive.json"
+            },
+            "menu": {
+              "text": "👋🏽 Neal",
+              "action": {
+               "type": "$href",
+               "options": {
+                  "url": "https://nealshyam.com",
+                  "view": "web"
                 }
-              ]
+              }
             }
           },
-          "sections": {
-        		"{{#each posts}}": {
+          "sections": [
+            {
               "header": {
-                "title": "Das Brunch",
+                "type": "vertical",
                 "style": {
-                  "background": "#D03C0F",
-                  "color": "#ffffff",
-                  "font": "AvenirNext-Bold",
-                  "size": "14"
+                  "background": "#ebebeb",
+                  "align": "center",
+                  "shy": "true"
                 },
-        				"components": [{
-        					"type": "vertical",
-        					"href": {
-        						"url": "{{url}}",
-        						"view": "web"
-        					},
-        					"components": [
-                    {
-                      "type": "label",
-          						"text": "{{title}}",
-          						"style": {
-          							"font": "HelveticaNeue-Bold",
-          							"size": "12"
-          						 }
-        					  },
-                    {
-          						"type": "label",
-          						"text": "{{publisher}}",
-          						"style": {
-          							"font": "HelveticaNeue",
-          							"size": "11"
-          						 }
-        					  },
-                    {
-                      "type": "image",
-              				"url": "{{img}}",
-          						"style": {
-                        "width": "100%",
-              					"padding": "0"
-          						 }
-        					  }
-                  ]
-        				}]
-        			}
-        		}
-        	}
+                "components": [{
+                  "type": "label",
+                  "class": "normal",
+                  "text": "Start your day smart with an awesome read!"
+                }]
+              },
+              "items": {
+                  "{{#each $jason.stories}}": {
+                    "type": "vertical",
+                    "style": {
+                      "spacing": "30",
+                      "padding": "10"
+                    },
+                    "action": {
+                     "type": "$href",
+                     "options": {
+                        "url": "{{url}}",
+                        "view": "web"
+                      }
+                    },
+                      "components": [
+                        {
+                          "type": "label",
+                          "text": "{{title}}",
+                          "style": {
+                            "class": "bold padded spaced"
+                           }
+                        },
+                        {
+                          "type": "label",
+                          "text": "({{publisher}})",
+                          "style": {
+                            "class": "normal padded spaced"
+                           }
+                        },
+                        {
+                          "type": "image",
+                          "url": "{{img}}",
+                          "style": {
+                            "width": "100%",
+                            "height": "300"
+                           }
+                        }
+                      ]
+                  }
+              }
+            }
+          ]
         }
       }
     }
