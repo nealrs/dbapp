@@ -1,116 +1,215 @@
+
 {
   "$jason": {
     "head": {
       "data": {
-        "posts": [
-        	{
-        		"id":"0",
-        		"title": "A binary coder for Swift",
-        		"publisher": "Mike Ash",
-        		"url": "https://www.mikeash.com/pyblog/friday-qa-2017-07-28-a-binary-coder-for-swift.html",
-        		"img": "http://lorempixel.com/output/abstract-q-c-640-480-10.jpg"
-        	},
-        	{
-        		"id":"1",
-        		"title": "Visualizing the Math Behind Logistic Regression and Newton's Method",
-        		"publisher": "Laziest Programmer",
-        		"url": "http://thelaziestprogrammer.com/sharrington/math-of-machine-learning/solving-logreg-newtons-method",
-        		"img": "http://lorempixel.com/output/abstract-q-c-640-480-3.jpg"
-        	},
-        	{
-        		"id":"2",
-        		"title": "How to present a GitHub project for your resume (2016)",
-        		"publisher": "The HFT Guy",
-        		"url": "https://thehftguy.com/2016/10/24/heres-how-to-make-a-good-github-project-for-your-resume/",
-        		"img": "http://lorempixel.com/output/abstract-q-c-640-480-5.jpg"
-        	}
-        ]
+        "posts": [{
+          "type": "stories",
+          "items": [{
+            "avatar": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/barton_avatar.png",
+            "name": "Barton",
+            "location": "Somewhere",
+            "content": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/barton.jpg"
+          }, {
+            "avatar": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/audrey_avatar.png",
+            "name": "Audrey",
+            "location": "Somewhere",
+            "content": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/audrey.jpg"
+          }, {
+            "avatar": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/boss_avatar.png",
+            "name": "Audrey",
+            "location": "Somewhere",
+            "content": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/boss.jpg"
+          }, {
+            "avatar": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/chet_avatar.png",
+            "name": "Chet!",
+            "location": "Somewhere",
+            "content": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/chet.jpg"
+          }, {
+            "avatar": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/girl_avatar.png",
+            "name": "Girl",
+            "location": "Somewhere",
+            "content": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/girl.jpg"
+          }]
+        }, {
+          "avatar": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/barton_avatar.png",
+          "name": "Barton",
+          "location": "Somewhere",
+          "content": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/barton.jpg"
+        }, {
+          "avatar": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/audrey_avatar.png",
+          "name": "Audrey",
+          "location": "Somewhere",
+          "content": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/audrey.jpg"
+        }, {
+          "avatar": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/boss_avatar.png",
+          "name": "Audrey",
+          "location": "Somewhere",
+          "content": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/boss.jpg"
+        }, {
+          "avatar": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/chet_avatar.png",
+          "name": "Chet!",
+          "location": "Somewhere",
+          "content": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/chet.jpg"
+        }, {
+          "avatar": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/girl_avatar.png",
+          "name": "Girl",
+          "location": "Somewhere",
+          "content": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/girl.jpg"
+        }]
       },
-      "title": "Das Brunch",
-      "description": "Das Brunch reading list app",
-      "icon": "https://raw.githubusercontent.com/nealrs/dbapp/master/db.png",
-      "actions": {
-        "$pull": {
-          "type": "$reload"
-        },
-        "$foreground": {
-          "type": "$reload"
-        }
-      },
-
+      "templates": {
         "body": {
           "header": {
-            "title": "Das Brunch",
             "style": {
-              "background": "#D03C0F",
-              "color": "#111111",
-              "font": "AvenirNext-Bold",
-              "size": "14"
+              "shy": "true"
+            },
+            "title": {
+              "type": "image",
+              "style": {
+                "width": "94",
+                "height": "27"
+              },
+              "url": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/logo.png"
+            },
+            "menu": {
+              "image": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/box.png"
             }
+          },
+          "sections": {
+            "{{#each posts}}": [
+              {
+                "{{#if ('type' in this) && (type=='stories') }}": {
+                  "type": "horizontal",
+                  "items": {
+                    "{{#each items}}": {
+                      "type": "vertical",
+                      "style": {
+                        "background": "#fafafa",
+                        "padding": "9",
+                        "spacing": "13",
+                        "width": "90",
+                        "align": "center",
+                        "distribution": "equalspacing",
+                        "height": "120"
+                      },
+                      "components": [{
+                        "type": "image",
+                        "url": "{{avatar}}",
+                        "style": {
+                          "width": "76",
+                          "height": "76",
+                          "corner_radius": "38"
+                        }
+                      }, {
+                        "type": "label",
+                        "text": "{{name}}",
+                        "style": {
+                          "size": "12"
+                        }
+                      }]
+                    }
+                  }
+                }
+              },
+              {
+                "{{#else}}": {
+                  "header": {
+                    "type": "horizontal",
+                    "style": {
+                      "background": "#ffffff",
+                      "padding": "9",
+                      "spacing": "13"
+                    },
+                    "components": [{
+                      "type": "image",
+                      "url": "{{avatar}}",
+                      "style": {
+                        "width": "38",
+                        "height": "38",
+                        "corner_radius": "19"
+                      }
+                    }, {
+                      "type": "vertical",
+                      "components": [{
+                        "type": "label",
+                        "text": "{{name}}",
+                        "style": {
+                          "font": "HelveticaNeue-Bold",
+                          "size": "12"
+                        }
+                      }, {
+                        "type": "label",
+                        "text": "{{location}} >",
+                        "style": {
+                          "font": "HelveticaNeue",
+                          "size": "11"
+                        }
+                      }]
+                    }, {
+                      "type": "space"
+                    }, {
+                      "type": "image",
+                      "url": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/dotdotdot.png",
+                      "style": {
+                        "padding_top": "10",
+                        "width": "25"
+                      }
+                    }]
+                  },
+                  "items": [{
+                    "style": {
+                      "width": "100%",
+                      "padding": "0"
+                    },
+                    "type": "image",
+                    "url": "{{content}}"
+                  }]
+                }
+              }
+            ]
           },
           "footer": {
             "tabs": {
               "style": {
-                "background": "#D03C0F",
-                "color": "#ffffff"
+                "background": "rgba(255,255,255,0.8)",
+                "color": "#000000"
               },
-              "items": [
-                {
-                  "text": "Latest stories",
-                  "url": "https://raw.githubusercontent.com/nealrs/dbapp/master/json/current.json"
+              "items": [{
+                "image": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/home.png",
+                "style": {
+                  "height": "21"
                 },
-                {
-                  "text": "Past issues",
-                  "url": "https://raw.githubusercontent.com/nealrs/dbapp/master/json/archive.json"
-                }
-              ]
+                "url": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/home.json"
+              }, {
+                "image": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/search.png",
+                "style": {
+                  "height": "21"
+                },
+                "url": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/search.json"
+              }, {
+                "image": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/camera.png",
+                "style": {
+                  "height": "21"
+                },
+                "url": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/camera.json"
+              }, {
+                "image": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/heart.png",
+                "style": {
+                  "height": "21"
+                },
+                "url": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/heart.json"
+              }, {
+                "image": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/profile.png",
+                "style": {
+                  "height": "21"
+                },
+                "url": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/profile.json"
+              }]
             }
-          },
-          "sections": {
-        		"{{#each posts}}": {
-        			"header": {
-        				"type": "horizontal",
-        				"style": {
-        					"background": "#ffffff",
-                  "color": "#111111",
-        					"padding": "9",
-        					"spacing": "13"
-        				},
-        				"components": [{
-        					"type": "vertical",
-        					"href": {
-        						"url": "{{url}}",
-        						"view": "web"
-        					},
-        					"components": [{
-        						"type": "label",
-        						"text": "{{title}}",
-        						"style": {
-        							"font": "HelveticaNeue-Bold",
-        							"size": "12"
-        						}
-        					}, {
-        						"type": "label",
-        						"text": "{{publisher}}",
-        						"style": {
-        							"font": "HelveticaNeue",
-        							"size": "11"
-        						}
-        					}]
-        				}]
-        			},
-        			"items": [{
-        				"style": {
-        					"width": "100%",
-        					"padding": "0"
-        				},
-        				"type": "image",
-        				"url": "{{img}}"
-        			}]
-        		}
-        	}
+          }
         }
-
+      }
     }
   }
 }
