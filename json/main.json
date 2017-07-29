@@ -31,25 +31,10 @@
       "icon": "https://raw.githubusercontent.com/nealrs/dbapp/master/db.png",
       "actions": {
         "$pull": {
-          "trigger": "fetch"
+          "type": "$reload"
         },
         "$foreground": {
-          "trigger": "fetch"
-        },
-        "$show": {
-          "trigger": "fetch"
-        },
-        "$load": {
-          "trigger": "fetch"
-        },
-        "fetch": {
-          "type": "$network.request",
-          "options": {
-            "url": "https://raw.githubusercontent.com/nealrs/dbapp/master/json/current.json"
-          },
-          "success": {
-            "type": "$render"
-          }
+          "type": "$reload"
         }
       },
       "templates": {

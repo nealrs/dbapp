@@ -7,6 +7,6 @@
   <key>client_secret</key>
   <string></string>
   <key>url</key>
-  <string>http://nealshyam.com/dasbrunch/main.json</string>
+  <string>https://raw.githubusercontent.com/nealrs/dbapp/master/json/main.json</string>
 </dict>
 </plist>
