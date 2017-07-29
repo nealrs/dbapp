@@ -38,17 +38,6 @@
         },
         "$show": {
           "type": "$reload"
-        },
-        "$load": {
-          "type": "$network.request",
-          "options": {
-            "url": "https://raw.githubusercontent.com/nealrs/dbapp/master/json/current.json",
-            "data_type": "json",
-            "dataType": "json"
-          },
-          "success": {
-            "type": "$render"
-          }
         }
       },
       "templates": {
