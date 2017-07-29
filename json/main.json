@@ -60,11 +60,11 @@
               "items": [
                 {
                   "text": "Latest stories",
-                  "url": "https://raw.githubusercontent.com/nealrs/dbapp/master/json/current.json"
+                  "url": "file://main.json"
                 },
                 {
                   "text": "Past issues",
-                  "url": "https://raw.githubusercontent.com/nealrs/dbapp/master/json/archive.json"
+                  "url": "file://archive.json"
                 }
               ]
             }

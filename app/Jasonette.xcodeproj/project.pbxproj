@@ -89,6 +89,9 @@
 		045E5F3C1E3661060088D5E6 /* JasonReturnAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JasonReturnAction.m; sourceTree = "<group>"; };
 		04D947E91F16ACF50063CC65 /* JASONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASONResponseSerializer.h; sourceTree = "<group>"; };
 		04D947EA1F16ACF50063CC65 /* JASONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASONResponseSerializer.m; sourceTree = "<group>"; };
+		08D1CF751F2D1025002F4763 /* current.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = current.json; path = ../../json/current.json; sourceTree = "<group>"; };
+		08D1CF761F2D1025002F4763 /* derp.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = derp.json; path = ../../json/derp.json; sourceTree = "<group>"; };
+		08D1CF771F2D1025002F4763 /* main.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = main.json; path = ../../json/main.json; sourceTree = "<group>"; };
 		1BD8E8486EE7AF4E4934685E /* Pods-Jasonette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jasonette.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jasonette/Pods-Jasonette.release.xcconfig"; sourceTree = "<group>"; };
 		2F0FCC971E030AF932E421D4 /* Pods_Jasonette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jasonette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E025B471DE017EB0016786A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -524,6 +527,9 @@
 		5E3177AC1D1F2A8200D87778 /* file:// */ = {
 			isa = PBXGroup;
 			children = (
+				08D1CF751F2D1025002F4763 /* current.json */,
+				08D1CF761F2D1025002F4763 /* derp.json */,
+				08D1CF771F2D1025002F4763 /* main.json */,
 				5E31777B1D1F199D00D87778 /* Images */,
 				045C77E81F0278EA00F06598 /* loading.json */,
 				045C77EA1F02791D00F06598 /* error.json */,
