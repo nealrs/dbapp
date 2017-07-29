@@ -1,9 +1,8 @@
-
 {
   "$jason": {
     "head": {
       "title": "Das Brunch",
-      "description": "The latest posts",
+      "description": "Das Brunch reading app",
       "icon": "https://raw.githubusercontent.com/nealrs/dbapp/master/db.png",
       "actions": {
         "$pull": {
@@ -36,13 +35,13 @@
             "border": "none"
           },
           "header": {
-            "title": {
-              "type": "image",
-              "url": "https://nealshyam.com/dasbrunch/db.png",
-              "style": {
-                "width": "20",
-                "height": "20"
-              }
+            "title": "Das Brunch",
+        "style": {
+          "background": "#D03C0F",
+          "color": "#ffffff",
+          "font": "AvenirNext-Bold",
+          "size": "14"
+        }
             },
             "style": {
               "background": "#230B0F",
