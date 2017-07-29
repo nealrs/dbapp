@@ -35,6 +35,20 @@
         },
         "$foreground": {
           "type": "$reload"
+        },
+        "$show": {
+          "type": "$reload"
+        },
+        "$load": {
+          "type": "$network.request",
+          "options": {
+            "url": "https://raw.githubusercontent.com/nealrs/dbapp/master/json/current.json",
+            "data_type": "json",
+            "dataType": "json"
+          },
+          "success": {
+            "type": "$render"
+          }
         }
       },
       "templates": {
@@ -43,7 +57,7 @@
             "title": "Das Brunch",
             "style": {
               "background": "#D03C0F",
-              "color": "#111111",
+              "color": "#ffffff",
               "font": "AvenirNext-Bold",
               "size": "14"
             }
@@ -68,45 +82,48 @@
           },
           "sections": {
         		"{{#each posts}}": {
-        			"header": {
-        				"type": "horizontal",
-        				"style": {
-        					"background": "#ffffff",
-                  "color": "#111111",
-        					"padding": "9",
-        					"spacing": "13"
-        				},
+              "header": {
+                "title": "Das Brunch",
+                "style": {
+                  "background": "#D03C0F",
+                  "color": "#ffffff",
+                  "font": "AvenirNext-Bold",
+                  "size": "14"
+                },
         				"components": [{
         					"type": "vertical",
         					"href": {
         						"url": "{{url}}",
         						"view": "web"
         					},
-        					"components": [{
-        						"type": "label",
-        						"text": "{{title}}",
-        						"style": {
-        							"font": "HelveticaNeue-Bold",
-        							"size": "12"
-        						}
-        					}, {
-        						"type": "label",
-        						"text": "{{publisher}}",
-        						"style": {
-        							"font": "HelveticaNeue",
-        							"size": "11"
-        						}
-        					}]
+        					"components": [
+                    {
+                      "type": "label",
+          						"text": "{{title}}",
+          						"style": {
+          							"font": "HelveticaNeue-Bold",
+          							"size": "12"
+          						 }
+        					  },
+                    {
+          						"type": "label",
+          						"text": "{{publisher}}",
+          						"style": {
+          							"font": "HelveticaNeue",
+          							"size": "11"
+          						 }
+        					  },
+                    {
+                      "type": "image",
+              				"url": "{{img}}",
+          						"style": {
+                        "width": "100%",
+              					"padding": "0"
+          						 }
+        					  }
+                  ]
         				}]
-        			},
-        			"items": [{
-        				"style": {
-        					"width": "100%",
-        					"padding": "0"
-        				},
-        				"type": "image",
-        				"url": "{{img}}"
-        			}]
+        			}
         		}
         	}
         }
