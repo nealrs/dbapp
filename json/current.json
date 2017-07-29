@@ -1,0 +1,27 @@
+{"posts": [
+	{
+		"id":"0",
+		"title": "A binary coder for Swift",
+		"publisher": "Mike Ash",
+		"url": "https://www.mikeash.com/pyblog/friday-qa-2017-07-28-a-binary-coder-for-swift.html",
+		"img": "http://lorempixel.com/output/abstract-q-c-640-480-10.jpg"
+
+	},
+	{
+		"id":"1",
+		"title": "Visualizing the Math Behind Logistic Regression and Newton's Method",
+		"publisher": "Laziest Programmer",
+		"url": "http://thelaziestprogrammer.com/sharrington/math-of-machine-learning/solving-logreg-newtons-method",
+		"img": "http://lorempixel.com/output/abstract-q-c-640-480-3.jpg"
+
+	},
+	{
+		"id":"2",
+		"title": "How to present a GitHub project for your resume (2016)",
+		"publisher": "The HFT Guy",
+		"url": "https://thehftguy.com/2016/10/24/heres-how-to-make-a-good-github-project-for-your-resume/",
+		"img": "http://lorempixel.com/output/abstract-q-c-640-480-5.jpg"
+
+	}
+ ]
+}
