@@ -37,7 +37,7 @@
           "type": "$reload"
         }
       },
-      "templates": {
+      
         "body": {
           "header": {
             "title": "Das Brunch",
@@ -110,7 +110,7 @@
         		}
         	}
         }
-      }
+
     }
   }
 }
