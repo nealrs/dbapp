@@ -1,9 +1,8 @@
-
 {
   "$jason": {
     "head": {
       "title": "Das Brunch",
-      "description": "The latest posts",
+      "description": "Das Brunch reading list app",
       "icon": "https://raw.githubusercontent.com/nealrs/dbapp/master/db.png",
       "actions": {
         "$pull": {
@@ -30,125 +29,75 @@
       },
       "templates": {
         "body": {
-          "style": {
-            "background": "#230B0F",
-            "color": "#ffffff",
-            "border": "none"
-          },
           "header": {
-            "title": {
-              "type": "image",
-              "url": "https://nealshyam.com/dasbrunch/db.png",
-              "style": {
-                "width": "20",
-                "height": "20"
-              }
-            },
+            "title": "Das Brunch",
             "style": {
-              "background": "#230B0F",
-              "font": "AvenirNext-Heavy",
-              "size": "14",
-              "shyt": "true",
-              "color": "#ffffff"
+              "background": "#D03C0F",
+              "color": "#ffffff",
+              "font": "AvenirNext-Bold",
+              "size": "14"
             }
           },
           "footer": {
             "tabs": {
               "style": {
-                "background": "#230B0F",
+                "background": "#D03C0F",
                 "color": "#ffffff"
               },
               "items": [
                 {
-                  "text": "New",
+                  "text": "Latest stories",
                   "url": "https://raw.githubusercontent.com/nealrs/dbapp/master/json/current.json"
                 },
                 {
-                  "text": "Previous issues",
+                  "text": "Past issues",
                   "url": "https://raw.githubusercontent.com/nealrs/dbapp/master/json/archive.json"
                 }
               ]
             }
           },
           "sections": {
-            "{{#each $jason.posts}}": {
-              "header": {
-                "type": "label",
-                "text": "Get it while it's hot!",
-                "style": {
-                  "background": "#230B0F",
-                  "font": "HelveticaNeue-CondensedBold",
-                  "padding": "10",
-                  "color": "#ffffff",
-                  "size": "12"
-                }
-              },
-              "items": [
-                {
-                  "type": "vertical",
-                  "href": {
-                    "url": "{{url}}",
-                    "view": "web"
-                  },
-                  "style": {
-                    "background": "#ffffff"
-                  },
-                  "components": [
-                    {
-                      "type": "vertical",
-                      "components": [
-                        {
-                          "type": "horizontal",
-                          "style": {
-                            "distribution": "fill",
-                            "padding": "10",
-                            "spacing": "10"
-                          },
-                          "components": [
-                            {
-                              "type": "vertical",
-                              "style": {
-                                "distribution": "fill",
-                                "spacing": "5"
-                              },
-                              "components": [
-                                {
-                                  "type": "label",
-                                  "style": {
-                                    "size": "18",
-                                    "font": "AvenirNext-Heavy",
-                                    "color": "#cb4924"
-                                  },
-                                  "text": "{{title}}"
-                                },
-                                {
-                                  "type": "label",
-                                  "style": {
-                                    "font": "AvenirNext-Regular",
-                                    "size": "12",
-                                    "color": "#000000"
-                                  },
-                                  "text": "{{publisher}}"
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "image",
-                      "url": "{{img}}",
-                      "style": {
-                        "width": "100%",
-                        "padding": "0"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          }
+        		"{{#each $jason.posts}}": {
+        			"header": {
+        				"type": "horizontal",
+        				"style": {
+        					"background": "#ffffff",
+        					"padding": "9",
+        					"spacing": "13"
+        				},
+        				"components": [{
+        					"type": "vertical",
+        					"href": {
+        						"url": "{{url}}",
+        						"view": "web"
+        					},
+        					"components": [{
+        						"type": "label",
+        						"text": "{{title}}",
+        						"style": {
+        							"font": "HelveticaNeue-Bold",
+        							"size": "12"
+        						}
+        					}, {
+        						"type": "label",
+        						"text": "{{publisher}}",
+        						"style": {
+        							"font": "HelveticaNeue",
+        							"size": "11"
+        						}
+        					}]
+        				}]
+        			},
+        			"items": [{
+        				"style": {
+        					"width": "100%",
+        					"padding": "0"
+        				},
+        				"type": "image",
+        				"url": "{{img}}"
+        			}]
+        		}
+        	}
         }
       }
     }
